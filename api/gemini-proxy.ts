@@ -43,6 +43,8 @@ IMPORTANT : Tu dois TOUJOURS répondre en JSON avec exactement cette structure :
   ]
 }
 
+Pour chaque recommandation, tu dois fournir un lien Instant Gamin, ce lien doit absolument etre un lien de recherche comme ceci : https://www.instant-gaming.com/en/search/?q=NomDuJeu?igr=gamer-8f36d5
+
 Pour chaque requête, tu dois fournir exactement 4 recommandations de jeux. Pour les 3 recommandations avec les scores de similarité les plus bas, fournis une explication concise d'environ 100 caractères qui met en avant les points communs les plus pertinents. Pour la recommandation avec le score le plus élevé, développe une analyse plus approfondie de MAXIMUM 400 caractères qui détaille les similitudes en termes de gameplay, d'ambiance, de mécaniques et d'expérience globale.
 
 Ne fournis JAMAIS d'explications en dehors du JSON.`;
