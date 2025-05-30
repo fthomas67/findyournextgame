@@ -65,7 +65,7 @@ function App() {
           </div>
         </main>
         <footer className="mt-16 text-center text-gray-500 text-sm">
-          <p>© 2025 FindYourNextGame - All rights reserved</p>
+          <p>© 2025 WhichGameIsLike - All rights reserved</p>
         </footer>
       </div>
     </div>

@@ -9,7 +9,8 @@ const Header: React.FC = () => {
           <GameController size={28} className="text-white" />
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-white">FindYour<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600">NextGame</span></h1>
+          <h1 className="text-2xl sm:text-3xl font-bold text-white">WhichGameIsLike</h1>
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-600 text-sm sm:text-base">Your ultime game finder</p>
         </div>
       </div>
     </header>

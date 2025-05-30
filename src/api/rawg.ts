@@ -4,7 +4,7 @@ import { GameRecommendation } from '../data/games';
 // Configuration de l'URL de l'API
 const API_BASE_URL = process.env.NODE_ENV === 'production' 
   ? 'https://findyournextgame-production-4b56.up.railway.app'
-  : '';
+  : 'http://localhost:8080';
 
 interface RAWGGame {
   id: number;
