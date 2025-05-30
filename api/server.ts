@@ -7,13 +7,11 @@ const app = express();
 
 // CORS complet avec réponse OPTIONS
 app.use(cors());
-app.options('*', cors()); // <-- gère les préflight requests
-
 app.use(express.json());
 
 // Montre clairement les chemins
-app.use('/api/gemini', geminiProxy);
-app.use('/api/rawg', rawgProxy);
+app.use('/api', geminiProxy);
+app.use('/api', rawgProxy);
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
