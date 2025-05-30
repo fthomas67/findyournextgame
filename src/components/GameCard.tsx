@@ -26,9 +26,9 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
         : 'border-gray-700/50 hover:border-blue-500/50'}`}>
       
       {isBestMatch ? (
-        <div className="flex">
-          {/* Image à gauche */}
-          <div className="w-1/3 relative">
+        <div className="flex flex-col md:flex-row">
+          {/* Image en haut sur mobile, à gauche sur desktop */}
+          <div className="w-full md:w-1/3 relative">
             <div className="aspect-[3/4] w-full overflow-hidden">
               <img
                 src={game.coverImage}
@@ -41,8 +41,8 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
             </div>
           </div>
 
-          {/* Contenu à droite */}
-          <div className="w-2/3 p-6 flex flex-col">
+          {/* Contenu en bas sur mobile, à droite sur desktop */}
+          <div className="w-full md:w-2/3 p-6 flex flex-col">
             <div className="flex-grow">
               <h3 className="text-2xl font-bold text-white">{game.name}</h3>
               {/* Badges plateformes et genres */}
