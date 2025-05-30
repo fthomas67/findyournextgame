@@ -55,7 +55,7 @@ function App() {
                 className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-800/50 hover:bg-gray-800/70 transition-colors text-gray-300 hover:text-white"
               >
                 <ArrowLeft size={20} />
-                <span>Nouvelle recherche</span>
+                <span>New search</span>
               </button>
             </div>
             

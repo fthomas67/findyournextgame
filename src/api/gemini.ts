@@ -1,3 +1,8 @@
+// Configuration de l'URL de l'API
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://findyournextgame-production-4b56.up.railway.app'
+  : '';
+
 export interface GeminiResponse {
   candidates: Array<{
     content: {
@@ -10,7 +15,7 @@ export interface GeminiResponse {
 
 export const getGameSuggestions = async (prompt: string): Promise<GeminiResponse> => {
   try {
-    const response = await fetch('https://findyournextgame-production-4b56.up.railway.app/api/gemini', {
+    const response = await fetch(`${API_BASE_URL}/api/gemini`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

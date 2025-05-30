@@ -78,7 +78,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-4 py-2 w-full justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg transition-all duration-200 shadow hover:brightness-110 hover:shadow-[0_0_16px_rgba(67,97,238,0.25)] focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
-                  Acheter
+                  Buy
                   <ExternalLink size={16} />
                 </a>
               )}

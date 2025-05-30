@@ -51,9 +51,6 @@ const GameResults: React.FC<GameResultsProps> = ({ recommendations, isLoading })
         </div>
       </div>
 
-      {/* Pub display entre les sections */}
-      <DisplayAd />
-
       {/* Mentions honorables */}
       {honorableMentions.length > 0 && (
         <div className="space-y-4">

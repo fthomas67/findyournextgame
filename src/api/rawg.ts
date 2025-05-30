@@ -1,6 +1,11 @@
 import { Game } from '../data/games';
 import { GameRecommendation } from '../data/games';
 
+// Configuration de l'URL de l'API
+const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  ? 'https://findyournextgame-production-4b56.up.railway.app'
+  : '';
+
 interface RAWGGame {
   id: number;
   name: string;
@@ -16,7 +21,7 @@ interface RAWGResponse {
 
 export const searchGames = async (query: string): Promise<Game[]> => {
   try {
-    const response = await fetch(`https://findyournextgame-production-4b56.up.railway.app/rawg?query=${encodeURIComponent(query)}`);
+    const response = await fetch(`${API_BASE_URL}/api/rawg?query=${encodeURIComponent(query)}`);
     if (!response.ok) {
       throw new Error('Error searching for games');
     }
@@ -37,7 +42,7 @@ export const searchGames = async (query: string): Promise<Game[]> => {
 
 export const getGameCoverImage = async (gameName: string): Promise<string> => {
   try {
-    const response = await fetch(`https://findyournextgame-production-4b56.up.railway.app/api/rawg?query=${encodeURIComponent(gameName)}&page_size=1`);
+    const response = await fetch(`${API_BASE_URL}/api/rawg?query=${encodeURIComponent(gameName)}&page_size=1`);
     if (!response.ok) {
       throw new Error('Error querying RAWG');
     }

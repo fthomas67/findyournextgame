@@ -22,7 +22,7 @@ app.use(express.json());
 app.use('/api', geminiProxy);
 app.use('/api', rawgProxy);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Serveur backend lancé sur le port ${PORT}`);
 });
