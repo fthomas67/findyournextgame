@@ -5,8 +5,17 @@ import rawgProxy from './rawg-proxy';
 
 const app = express();
 
-// CORS complet avec réponse OPTIONS
-app.use(cors());
+// Configuration CORS détaillée
+const corsOptions = {
+  origin: '*', // En production, spécifiez les domaines autorisés
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true,
+  optionsSuccessStatus: 204
+};
+
+// Appliquer CORS à toutes les routes
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Montre clairement les chemins
