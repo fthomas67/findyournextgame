@@ -3,6 +3,7 @@ import { Search } from 'lucide-react';
 import { GameRecommendation } from '../data/games';
 import { getGameSuggestions, GeminiResponse } from '../api/gemini';
 import { enrichRecommendationsWithCoverImages } from '../api/rawg';
+import { trackFormSubmit } from '../utils/analytics';
 
 interface SearchFormProps {
   onSubmit: (description: string) => void;
@@ -81,6 +82,9 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit, isLoading, onRecommen
         
         onRecommendationsReceived(enrichedSuggestions);
         console.log('Suggestions enrichies:', enrichedSuggestions);
+        
+        // Track form submission
+        trackFormSubmit(description);
       } catch (error) {
         console.error('Error:', error);
       } finally {

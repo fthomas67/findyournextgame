@@ -1,6 +1,7 @@
 import React from 'react';
 import { Game } from '../data/games';
 import { ExternalLink, Star } from 'lucide-react';
+import { trackPurchaseClick } from '../utils/analytics';
 
 interface GameCardProps {
   game: Game;
@@ -18,6 +19,10 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
   const instantGamingLink = purchaseLinks.find(link => 
     link.name.toLowerCase().includes('instant gaming')
   );
+
+  const handlePurchaseClick = (storeName: string) => {
+    trackPurchaseClick(game.name, storeName);
+  };
 
   return (
     <div className={`relative bg-gray-800/50 rounded-xl overflow-hidden border transition-all duration-300 hover:shadow-[0_0_20px_rgba(67,97,238,0.2)]
@@ -76,6 +81,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
                   href={instantGamingLink.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handlePurchaseClick(instantGamingLink.name)}
                   className="inline-flex items-center gap-2 px-4 py-2 w-full justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg transition-all duration-200 shadow hover:brightness-110 hover:shadow-[0_0_16px_rgba(67,97,238,0.25)] focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   Buy
@@ -133,6 +139,7 @@ const GameCard: React.FC<GameCardProps> = ({ game, similarityScore, matchReason,
                   href={instantGamingLink.url}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => handlePurchaseClick(instantGamingLink.name)}
                   className="inline-flex items-center gap-2 px-4 py-2 w-full justify-center bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg transition-all duration-200 shadow hover:brightness-110 hover:shadow-[0_0_16px_rgba(67,97,238,0.25)] focus:outline-none focus:ring-2 focus:ring-blue-500"
                 >
                   Buy

@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { GameRecommendation } from '../data/games';
 import GameCard from './GameCard';
 import LoadingMessages from './LoadingMessages';
 import DisplayAd from './DisplayAd';
+import { trackResultsDisplay } from '../utils/analytics';
 
 interface GameResultsProps {
   recommendations: GameRecommendation[];
@@ -17,6 +18,12 @@ const GradientTitle: React.FC<{children: React.ReactNode}> = ({ children }) => (
 );
 
 const GameResults: React.FC<GameResultsProps> = ({ recommendations, isLoading }) => {
+  useEffect(() => {
+    if (!isLoading && recommendations.length > 0) {
+      trackResultsDisplay(recommendations.length);
+    }
+  }, [isLoading, recommendations]);
+
   if (isLoading) {
     return <LoadingMessages />;
   }
